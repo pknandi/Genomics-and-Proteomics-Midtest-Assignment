@@ -3,6 +3,16 @@ import java.util.Scanner;
 public class ProblemThree {
     private static String T,s,s1;
     private static int k;
+
+    public static void TakeInput(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Give the long string");
+        T = sc.nextLine();
+        System.out.println("Give the short string");
+        s = sc.nextLine();
+        System.out.println("Give the value of k");
+        k = sc.nextInt();
+    }
     public static int HamDis(String s, String s1){
         int l1 = s.length();
         int l2 = s1.length();
@@ -15,13 +25,7 @@ public class ProblemThree {
         return cnt;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Give the long string");
-        T = sc.nextLine();
-        System.out.println("Give the short string");
-        s = sc.nextLine();
-        System.out.println("Give the value of k");
-        k = sc.nextInt();
+        TakeInput();
         int szt = T.length();
         int szs = s.length();
         for(int i = 0;i<szt-szs;i++){

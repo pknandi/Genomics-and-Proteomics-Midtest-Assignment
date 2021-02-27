@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class DeBruijnAlgo {
     public static int n=0,totalEdge=0,k,u,v;
@@ -10,6 +7,35 @@ public class DeBruijnAlgo {
     public static HashSet<String> smallMerSet = new HashSet<>();
     public static ArrayList<String> smallMerList;
     public static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+
+    public static void TakeInput(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Give the "+ n +" k-mers");
+        for(int i = 0; i<n; i++){
+            spectrum.add(sc.nextLine());
+        }
+        System.out.println("Give the number of k-mer in the spectrum:");
+        n = sc.nextInt();
+        System.out.println("Give the value of k");
+        k=sc.nextInt();
+        totalEdge=n;
+        sc.nextLine();
+    }
+    public static void ValueInitialize(){
+        n = 8;
+        System.out.println("The number of k-mer in the spectrum: "+n);
+        k=3;
+        System.out.println("The value of k is: "+k);
+        totalEdge = 8;
+
+        String[] input = {"AGT", "AAA", "ACT", "AAC", "CTT", "GTA", "TTT", "TAA"};
+        spectrum.addAll(Arrays.asList(input));
+        System.out.println("Input k-mers are:");
+        for(String i:spectrum){
+            System.out.print(i+"\t");
+        }
+        System.out.println();
+    }
 
     public static void BuildGraph(ArrayList<ArrayList<Integer>> G,int n){
         G.clear();
@@ -79,18 +105,9 @@ public class DeBruijnAlgo {
     }
 
     public static void main (String [] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Give the number of k-mer in the spectrum:");
-        n = sc.nextInt();
-        System.out.println("Give the value of k");
-        k=sc.nextInt();
+        //TakeInput();
 
-        totalEdge=n;
-        sc.nextLine();
-        System.out.println("Give the "+ n +" k-mers");
-        for(int i = 0; i<n; i++){
-            spectrum.add(sc.nextLine());
-        }
+        ValueInitialize();
 
         for(int i = 0; i<n; i++) {
             kMer = spectrum.get(i);
