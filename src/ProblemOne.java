@@ -40,6 +40,7 @@ public class ProblemOne {
 
     public static int Similarity(char a, char b){
         if(a==b) return match;
+        else if(a=='_' || b=='_') return gapPenalty;
         else return mismatch;
     }
 
