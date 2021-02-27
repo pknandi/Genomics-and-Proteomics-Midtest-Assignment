@@ -1,3 +1,9 @@
+/*This is the implementation of deBruijn Graph algorithm for finding shortest superstring from given k-mers
+* Input: K-mers
+* Output: Superstring consisting of those k-mers*/
+
+
+
 import java.util.*;
 
 public class DeBruijnAlgo {
@@ -21,6 +27,7 @@ public class DeBruijnAlgo {
         totalEdge=n;
         sc.nextLine();
     }
+
     public static void ValueInitialize(){
         n = 8;
         System.out.println("The number of k-mer in the spectrum: "+n);
@@ -105,6 +112,11 @@ public class DeBruijnAlgo {
     }
 
     public static void main (String [] args){
+
+         /* If anyone want to give custom input, use the TakeInput() function
+        and for fixed data use the ValueInitialize() function.
+        Just modify the variables value inside the ValueInitialize() function.*/
+
         //TakeInput();
 
         ValueInitialize();

@@ -1,3 +1,9 @@
+/*This is an implementation of finding the first occurrence of a string s' in Large string T
+such that the hamming distance between another small string s and s' is less or equal than k
+Input: Two Strings, T and s and a integer k
+Output: First occurrence where given condition is true*/
+
+
 import java.util.Scanner;
 
 public class ProblemThree {

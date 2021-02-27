@@ -1,11 +1,16 @@
-import javax.swing.*;
+/* This code is the implementation of DP solution of global alignment of DNA sequence.
+* Input = Two string sequences
+* Output = Global Alignment Strings
+* Scoring Matrix is also printed*/
+
+
 import java.util.Scanner;
 
 public class ProblemOne {
     private static String alignmentA,alignmentB;
     private static int lenA,lenB,match,mismatch, gapPenalty,score=0;
 
-    private static int[][] scoreMatrix= new int[100][100];
+    private static int[][] scoreMatrix= new int[100][100]; /* Change the size if string size is more than 100. */
 
     public static void TakeInput(){
         Scanner sc = new Scanner(System.in);
@@ -106,6 +111,7 @@ public class ProblemOne {
             }
         }
 
+        //Global Alignments are printed here
         int len1 = ansAlignA.length();
         int len2 = ansAlignB.length();
         System.out.print("Sequence A ----> ");
@@ -118,6 +124,8 @@ public class ProblemOne {
             System.out.print(ansAlignB.charAt(k));
         }
         System.out.println();
+
+        //Score Value is calculated here
         for(int k=len1-1;k>=0;k--){
             score += Similarity(ansAlignA.charAt(k),ansAlignB.charAt(k));
         }
@@ -125,6 +133,11 @@ public class ProblemOne {
     }
 
     public static void main(String[] args){
+
+        /* If anyone want to give custom input, use the TakeInput() function
+        and for fixed data use the ValueInitialize() function.
+        Just modify the variables value inside the ValueInitialize() function.*/
+
         //TakeInput();
         ValueInitialize();
 
